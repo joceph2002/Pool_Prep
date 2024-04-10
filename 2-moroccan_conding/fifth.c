@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-//Structs
+//Structs 
 struct Student{
 	char name[20];
 	int age;
