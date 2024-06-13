@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <math.h>
 
 int main() {
     int U, n05, Ui = 6, i06 = 1;
@@ -100,11 +102,84 @@ int main() {
 The program should also ask the user if they want to start another operation or exit the program.*/
 
 
+	int operation;
+	float F_number, S_number;
+	char Decision;
+
+	while (1)
+	{
 	
+		printf("---Calculator Menu---");
+		printf("\n1 - Addition.\n2 - Substraction\n3 - Multiplication.\n4 - Division.\n5 - The Reste of Division.\n6 - Power.\n");
+		printf("\nChoose your Calculator (1 to 6): ");
+		scanf("%d",&operation);
+		printf("\nEnter the First Number: ");
+		scanf("%f",&F_number);
+		printf("\nEnter the second Number: ");
+		scanf("%f",&S_number);
+		
+		if (operation == 1){
+			printf("\nThe result is :%.2f",F_number + S_number);
+		}else if (operation == 2)
+		{
+			printf("\nThe Result is :%.2f",F_number - S_number);
+		}else if (operation == 3)
+		{
+			printf("\nThe Result is :%.2f",F_number * S_number);
+		}else if (operation == 4)
+		{
+			printf("\nThe Result is :%.2f",F_number / S_number);
+		}else if (operation == 5)
+		{
+			printf("\nThe Result is :%.2f",fmod(F_number, S_number));
+		}else if(operation == 6)
+		{	
+			printf("\nThe Result is :%.2f",pow(F_number,S_number));
+		}else
+			printf("\nWrong Operation, Choose between 1 and 6");
 
+	
+		printf("\nDo you want to Repeat the caluculator(Y/N)?");
+		scanf(" %c", &Decision);
+		
+		if(Decision == 'N')
+			break;
+	}
+	printf("\n\n");
 
+	int nbr =0, number;
 
+	printf("input a number you want to count how many char");
+	scanf("%d",&number);
+	while(1)
+	{
+		nbr++;
+		number = number /10;
+		if (number == 0)
+			break;
 
+	}
+
+	printf("\nthe total number is %d",nbr);
+	printf("\n\n");
+
+	int reverse =0 ,N,P;
+	
+	printf("Enter the number you want to REVERSE.");
+	scanf("%d",&N);
+	P = N;
+	while(N != 0)
+	{
+		reverse = (reverse*10) + (N % 10);
+		N = N /10;
+	}
+	printf("The Reverse Number is %d\n",reverse);
+	printf("the Palindrone number is number that has the same value even if you reverse it like 161 and reverse 161.\n");
+	if (P == reverse)
+		printf("the Number is palindrome because, %d and reverse %d are equal.\n",P,reverse);
+	else
+		printf("the number is not palindrome because, %d is and reverve %d are not equal.",P,reverse);
+		
     return 0;
 }
 
