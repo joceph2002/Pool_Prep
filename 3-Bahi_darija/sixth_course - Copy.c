@@ -91,25 +91,25 @@ int main() {
 
 
 
-    int M[3][4];  // Declare a 2D array
+    int M01[3][4];  // Declare a 2D array
     int i02, j02;
-    int (*P)[4] = M;  // Pointer to an array of 4 integers
+    int (*P)[4] = M01;  // Pointer to an array of 4 integers
 
     // Input values into the 2D array
     for (i02 = 0; i02 < 3; i02++) {
         for (j02 = 0; j02 < 4; j02++) {
-            printf("M[%d][%d] = ", i02, j02);
+            printf("M01[%d][%d] = ", i02, j02);
             scanf("%d", &P[i02][j02]);  // Use pointer to access elements
         }
     }
 
-    int min = M[0][0];  // Initialize min with the first element of M
+    int min = M01[0][0];  // Initialize min with the first element of M
 
     // Find the minimum value in the 2D array
     for (i02 = 0; i02 < 3; i02++) {
         for (j02 = 0; j02 < 4; j02++) {
-            if (min > M[i02][j02]) {
-                min = M[i02][j02];
+            if (min > M01[i02][j02]) {
+                min = M01[i02][j02];
             }
         }
     }
